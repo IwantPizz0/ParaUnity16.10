@@ -22,7 +22,7 @@ public class AttakeEnemy : MonoBehaviour
     {
         if (_followTarget && !_isCollided)
         {
-            _rb.MovePosition(transform.position - _followTarget.position * speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _followTarget.position, speed * Time.deltaTime);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
